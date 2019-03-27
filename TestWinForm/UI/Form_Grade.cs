@@ -19,5 +19,10 @@ namespace TestWinForm.UI
             IList<Score> scores= NetworkService.GetAllStudentGrades();
             dataGridView1.DataSource = scores;
         }
+
+        private void Form_Grade_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

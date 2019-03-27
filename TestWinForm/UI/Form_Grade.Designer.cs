@@ -55,6 +55,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_Grade";
             this.Text = "成绩查询";
+            this.Load += new System.EventHandler(this.Form_Grade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
