@@ -11,6 +11,7 @@ namespace TestWinForm
 {
     class ClientJsonConverter
     {
+        string
         // get response 
         public static ServerResponse GetServerResponse(string jsonResponseText)
         {
