@@ -197,5 +197,26 @@ namespace TestWinForm
         {
             return JsonConvert.SerializeObject(new { connectionInfo, grades });
         }
+
+        // 学生选课
+        public static string GetStudentInsertCourseRequestJson(ConnectionInfo connectionInfo,
+            Score score)
+        {
+            return JsonConvert.SerializeObject(new { connectionInfo, score });
+        }
+
+        // 学生选课
+        public static string GetStudentDeleteCourseRequestJson(ConnectionInfo connectionInfo,
+            Score score)
+        {
+            return JsonConvert.SerializeObject(new { connectionInfo, score });
+        }
+
+        // 教师管理课程
+        public static string GetTeacherManageCourseRequestJson(ConnectionInfo connectionInfo,
+            Course course)
+        {
+            return JsonConvert.SerializeObject(new { connectionInfo, course });
+        }
     }
 }

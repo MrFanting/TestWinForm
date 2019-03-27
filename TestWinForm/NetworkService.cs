@@ -67,7 +67,7 @@ namespace TestWinForm
             return student;
         }
 
-        public static bool InsertStudentCourse(string course_id)
+        public static bool InsertStudentCourse(Score score)
         {
             TcpClient tcpClient = new TcpClient("127.0.0.1", 6666);
             NetworkStream ns = tcpClient.GetStream();
@@ -76,8 +76,28 @@ namespace TestWinForm
 
             ConnectionInfo connectionInfo = new ConnectionInfo(GlobalSession,
                 ConnectionInfo.studentInsertCourse);
-            sw.WriteLine(ClientJsonConverter.GetTeacherPersonalInfoRequestJson(
-                connectionInfo));
+            sw.WriteLine(ClientJsonConverter.GetStudentInsertCourseRequestJson(
+                connectionInfo,score));
+            sw.Flush();
+            string jsonResponse = sr.ReadLine();
+            if (!IsRequestSuccessful(jsonResponse))
+                return false;
+
+            ns.Close();
+            tcpClient.Close();
+            return true;
+        }
+        public static bool DeleteStudentCourse(Score score)
+        {
+            TcpClient tcpClient = new TcpClient("127.0.0.1", 6666);
+            NetworkStream ns = tcpClient.GetStream();
+            StreamReader sr = new StreamReader(ns);
+            StreamWriter sw = new StreamWriter(ns);
+
+            ConnectionInfo connectionInfo = new ConnectionInfo(GlobalSession,
+                ConnectionInfo.studentDeleteCourse);
+            sw.WriteLine(ClientJsonConverter.GetStudentDeleteCourseRequestJson(
+                connectionInfo, score));
             sw.Flush();
             string jsonResponse = sr.ReadLine();
             if (!IsRequestSuccessful(jsonResponse))
@@ -110,7 +130,42 @@ namespace TestWinForm
             tcpClient.Close();
             return teacher;
         }
+        //老师管理课程
+        public static bool TeacherManageCourse(Course course,string type)
+        {
+            TcpClient tcpClient = new TcpClient("127.0.0.1", 6666);
+            NetworkStream ns = tcpClient.GetStream();
+            StreamReader sr = new StreamReader(ns);
+            StreamWriter sw = new StreamWriter(ns);
 
+            ConnectionInfo connectionInfo = new ConnectionInfo(GlobalSession,
+                type);
+            sw.WriteLine(ClientJsonConverter.GetTeacherManageCourseRequestJson(
+                connectionInfo, course));
+            sw.Flush();
+            string jsonResponse = sr.ReadLine();
+            if (!IsRequestSuccessful(jsonResponse))
+                return false;
+
+            ns.Close();
+            tcpClient.Close();
+            return true;
+        }
+        //老师删除课程
+        public static bool TeacherDeleteCourse(Course course)
+        {
+            return TeacherManageCourse(course, ConnectionInfo.teacherDeleteCourse);
+        }
+        //老师添加课程
+        public static bool TeacherAddCourse(Course course)
+        {
+            return TeacherManageCourse(course, ConnectionInfo.teacherAddCourse);
+        }
+        //老师更改课程,只能更改上课时间和教室编号
+        public static bool TeacherUpdateCourse(Course course)
+        {
+            return TeacherManageCourse(course, ConnectionInfo.teacherUpdateCourse);
+        }
         public static bool UpdatePassword(UserAccount userAccount)
         {
             TcpClient tcpClient = new TcpClient("127.0.0.1", 6666);
