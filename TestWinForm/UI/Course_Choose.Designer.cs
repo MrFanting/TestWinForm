@@ -94,6 +94,7 @@
             this.credit.Name = "credit";
             this.credit.Size = new System.Drawing.Size(100, 21);
             this.credit.TabIndex = 7;
+            this.credit.ReadOnly = true;
             // 
             // label3
             // 
@@ -167,6 +168,7 @@
             this.course_time.Name = "course_time";
             this.course_time.Size = new System.Drawing.Size(100, 21);
             this.course_time.TabIndex = 17;
+            this.course_time.ReadOnly = true;
             // 
             // Course_Choose
             // 

@@ -21,9 +21,53 @@ namespace TestWinForm.UI
         private void button1_Click(object sender, EventArgs e)
         {
             IList<Room> rooms = NetworkService.GetRoomIdle();
+            IList<Room> roomsQuery = new List<Room>();
+            string weekday = GetWeekName();
+            foreach (Room room in rooms)
+            {
+                if (room.IdleTime.Equals(weekday))
+                {
+                    roomsQuery.Add(room);
+                }
+            }
+            this.dataGridView1.DataSource = roomsQuery;
+
             //
         }
 
+        /// <summary>
+        /// 获取当前星期几
+        /// </summary>
+        /// <returns></returns>
+        private static string GetWeekName()
+        {
+            string weekName = "";
+            switch (DateTime.Now.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    weekName = "周一";
+                    break;
+                case DayOfWeek.Tuesday:
+                    weekName = "周二";
+                    break;
+                case DayOfWeek.Wednesday:
+                    weekName = "周三";
+                    break;
+                case DayOfWeek.Thursday:
+                    weekName = "周四";
+                    break;
+                case DayOfWeek.Friday:
+                    weekName = "周五";
+                    break;
+                case DayOfWeek.Saturday:
+                    weekName = "周六";
+                    break;
+                case DayOfWeek.Sunday:
+                    weekName = "周日";
+                    break;
+            }
+            return weekName;
+        }
         private void AddInfo(Room room)
         {
             if (room != null)
@@ -33,9 +77,61 @@ namespace TestWinForm.UI
             {
                 MessageBox.Show("没有这间教室");
             }
-            
+
         }
 
-        
+        private void ClassRoom_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = NetworkService.GetRoomIdle();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.textBox1.Text = this.dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
+            this.textBox2.Text = this.dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString().Trim();
+            this.textBox3.Text = this.dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString().Trim();
+            this.textBox4.Text = this.dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString().Trim();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
