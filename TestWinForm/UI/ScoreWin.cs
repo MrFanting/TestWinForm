@@ -21,33 +21,16 @@ namespace TestWinForm.UI
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Course course = new Course();
-            course.Id = textBox1.Text.ToString().Trim();
-            scores = NetworkService.GetTeacherCourseGrades(course);
-            if (scores != null)
-            {
-                AddInfo(scores[flag]);
-            }
-            else
-            {
-                MessageBox.Show("没有这门课");
-            }
-            
-        }
-
         private void AddInfo(Score score)
         {
-            textBox2.Text = score.Con;
-            textBox3.Text = score.StudentId;
-            textBox4.Text = score.Mark;
+            course_name.Text = score.Con;
+            student_id.Text = score.StudentId;
+            grade.Text = score.Mark;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            scores[flag].Mark = textBox4.Text.ToString().Trim();
+            scores[flag].Mark = grade.Text.ToString().Trim();
             if (flag > 0)
             {
                 flag -= 1;
@@ -61,7 +44,7 @@ namespace TestWinForm.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            scores[flag].Mark = textBox4.Text.ToString().Trim();
+            scores[flag].Mark = grade.Text.ToString().Trim();
             if (flag <(scores.Count-1))
             {
                 flag += 1;
@@ -75,7 +58,7 @@ namespace TestWinForm.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            scores[flag].Mark = textBox4.Text.ToString().Trim();
+            scores[flag].Mark = grade.Text.ToString().Trim();
             if (NetworkService.GetTeacherCourseGrades(scores))
             {
                 MessageBox.Show("更改成功");
@@ -86,5 +69,24 @@ namespace TestWinForm.UI
             }
         }
 
+        private void ScoreWin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Course course = new Course();
+            course.Id = id.Text.ToString().Trim();
+            scores = NetworkService.GetTeacherCourseGrades(course);
+            if (scores != null)
+            {
+                AddInfo(scores[flag]);
+            }
+            else
+            {
+                MessageBox.Show("没有学生选择这门课");
+            }
+        }
     }
 }

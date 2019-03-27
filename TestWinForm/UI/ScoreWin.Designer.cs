@@ -29,144 +29,182 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.course_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.student_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.grade = new System.Windows.Forms.TextBox();
+            this.naxt = new System.Windows.Forms.Button();
+            this.prior = new System.Windows.Forms.Button();
+            this.submit = new System.Windows.Forms.Button();
+            this.course_data = new System.Windows.Forms.DataGridView();
+            this.student_data = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.course_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_data)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 67);
+            this.label1.Location = new System.Drawing.Point(24, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "请输入课程号";
+            this.label1.Text = "课程号";
             // 
-            // textBox1
+            // id
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(282, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "查询";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.id.Location = new System.Drawing.Point(107, 44);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(100, 21);
+            this.id.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 186);
+            this.label2.Location = new System.Drawing.Point(24, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "学    号";
             // 
-            // textBox2
+            // course_name
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(165, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
+            this.course_name.Enabled = false;
+            this.course_name.Location = new System.Drawing.Point(107, 91);
+            this.course_name.Name = "course_name";
+            this.course_name.Size = new System.Drawing.Size(100, 21);
+            this.course_name.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 143);
+            this.label3.Location = new System.Drawing.Point(24, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "课程名称";
             // 
-            // textBox3
+            // student_id
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(165, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 6;
+            this.student_id.Enabled = false;
+            this.student_id.Location = new System.Drawing.Point(107, 134);
+            this.student_id.Name = "student_id";
+            this.student_id.Size = new System.Drawing.Size(100, 21);
+            this.student_id.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 231);
+            this.label4.Location = new System.Drawing.Point(24, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 7;
             this.label4.Text = "成    绩";
             // 
-            // textBox4
+            // grade
             // 
-            this.textBox4.Location = new System.Drawing.Point(165, 228);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 8;
+            this.grade.Location = new System.Drawing.Point(107, 179);
+            this.grade.Name = "grade";
+            this.grade.Size = new System.Drawing.Size(100, 21);
+            this.grade.TabIndex = 8;
             // 
-            // button2
+            // naxt
             // 
-            this.button2.Location = new System.Drawing.Point(181, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "下一个";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.naxt.Location = new System.Drawing.Point(123, 245);
+            this.naxt.Name = "naxt";
+            this.naxt.Size = new System.Drawing.Size(75, 23);
+            this.naxt.TabIndex = 9;
+            this.naxt.Text = "下一个";
+            this.naxt.UseVisualStyleBackColor = true;
+            this.naxt.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // prior
             // 
-            this.button3.Location = new System.Drawing.Point(84, 300);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "上一个";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.prior.Location = new System.Drawing.Point(26, 245);
+            this.prior.Name = "prior";
+            this.prior.Size = new System.Drawing.Size(75, 23);
+            this.prior.TabIndex = 10;
+            this.prior.Text = "上一个";
+            this.prior.UseVisualStyleBackColor = true;
+            this.prior.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // submit
             // 
-            this.button4.Location = new System.Drawing.Point(282, 300);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "提交";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.submit.Location = new System.Drawing.Point(26, 295);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(75, 23);
+            this.submit.TabIndex = 11;
+            this.submit.Text = "提交";
+            this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // course_data
+            // 
+            this.course_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.course_data.Location = new System.Drawing.Point(224, 29);
+            this.course_data.Name = "course_data";
+            this.course_data.RowTemplate.Height = 23;
+            this.course_data.Size = new System.Drawing.Size(268, 150);
+            this.course_data.TabIndex = 12;
+            this.course_data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // student_data
+            // 
+            this.student_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.student_data.Location = new System.Drawing.Point(224, 217);
+            this.student_data.Name = "student_data";
+            this.student_data.RowTemplate.Height = 23;
+            this.student_data.Size = new System.Drawing.Size(268, 150);
+            this.student_data.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(222, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "全部课程";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(222, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "学生信息";
             // 
             // ScoreWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
+            this.ClientSize = new System.Drawing.Size(504, 406);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.student_data);
+            this.Controls.Add(this.course_data);
+            this.Controls.Add(this.submit);
+            this.Controls.Add(this.prior);
+            this.Controls.Add(this.naxt);
+            this.Controls.Add(this.grade);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.student_id);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.course_name);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
             this.Name = "ScoreWin";
             this.Text = "成绩管理";
+            this.Load += new System.EventHandler(this.ScoreWin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.course_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,16 +213,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox course_name;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox student_id;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox grade;
+        private System.Windows.Forms.Button naxt;
+        private System.Windows.Forms.Button prior;
+        private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.DataGridView course_data;
+        private System.Windows.Forms.DataGridView student_data;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
