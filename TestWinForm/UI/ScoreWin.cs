@@ -26,11 +26,13 @@ namespace TestWinForm.UI
             course_name.Text = score.Con;
             student_id.Text = score.StudentId;
             grade.Text = score.Mark;
+            id.Text = score.CourseId;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             scores[flag].Mark = grade.Text.ToString().Trim();
+            student_data.DataSource = scores;
             if (flag > 0)
             {
                 flag -= 1;
@@ -45,6 +47,7 @@ namespace TestWinForm.UI
         private void button2_Click(object sender, EventArgs e)
         {
             scores[flag].Mark = grade.Text.ToString().Trim();
+            student_data.DataSource = scores;
             if (flag <(scores.Count-1))
             {
                 flag += 1;
@@ -71,14 +74,15 @@ namespace TestWinForm.UI
 
         private void ScoreWin_Load(object sender, EventArgs e)
         {
-            
+            course_data.DataSource = NetworkService.GetTeacherCourses();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Course course = new Course();
-            course.Id = id.Text.ToString().Trim();
+            course.Id = this.course_data.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
             scores = NetworkService.GetTeacherCourseGrades(course);
+            student_data.DataSource = scores;
             if (scores != null)
             {
                 AddInfo(scores[flag]);
