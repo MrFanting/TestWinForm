@@ -84,7 +84,7 @@ namespace TestWinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            skinEngine1.SkinFile = Application.StartupPath + @"\Skins\CalmnessColor2.ssk";
+            //skinEngine1.SkinFile = Application.StartupPath + @"\Skins\CalmnessColor2.ssk";
             comboBox1.SelectedIndex = 0;
         }
     }

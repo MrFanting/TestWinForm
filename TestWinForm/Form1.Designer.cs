@@ -36,7 +36,6 @@
             this.btn_reset = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.SuspendLayout();
             // 
             // txt_id
@@ -118,15 +117,6 @@
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // skinEngine1
-            // 
-            this.skinEngine1.@__DrawButtonFocusRectangle = true;
-            this.skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
-            this.skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
-            this.skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.skinEngine1.SerialNumber = "";
-            this.skinEngine1.SkinFile = null;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -158,7 +148,6 @@
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }
 
